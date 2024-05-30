@@ -30,7 +30,7 @@ jobs:
 
   development_agent:
     if: github.ref != 'refs/heads/release/*' && github.ref != 'refs/heads/main' && contains(github.event_name, 'push')
-    runs-on: development
+    runs-on: self-hosted
 
     steps:
       - name: Checkout code
