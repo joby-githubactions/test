@@ -1,0 +1,39 @@
+name: XyZ CICD Template
+
+on:
+  push:
+    branches:
+      - 'release/*'
+      - 'main'
+      - '*'
+
+jobs:
+  release_agent:
+    if: startsWith(github.ref, 'refs/heads/release/') && contains(github.event_name, 'push')
+    runs-on: release
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Add steps specific to release branch workflow
+
+  production_agent:
+    if: github.ref == 'refs/heads/main' && contains(github.event_name, 'push')
+    runs-on: production
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Add steps specific to production branch workflow
+
+  development_agent:
+    if: github.ref != 'refs/heads/release/*' && github.ref != 'refs/heads/main' && contains(github.event_name, 'push')
+    runs-on: development
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Add steps specific to development branch workflow
