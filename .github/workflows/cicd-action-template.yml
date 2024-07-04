@@ -40,3 +40,6 @@ jobs:
           pwd
           echo "Checked out repository path:"
           echo "${GITHUB_WORKSPACE}"
+          source ${SCRIPTS_PATH}/shared/git_helpers.sh
+          email=$(get_git_committer_email)  # Call the function to get committer email
+          echo "Committer email: $email"
