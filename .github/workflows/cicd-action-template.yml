@@ -31,9 +31,11 @@ jobs:
   development_agent:
     if: github.ref != 'refs/heads/release/*' && github.ref != 'refs/heads/main' && contains(github.event_name, 'push')
     runs-on: development
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      # Add steps specific to development branch workflow
+      - name: Run Trivy Scan
+        run: |
+          pwd
+          echo "Checked out repository path:"
+          echo "${GITHUB_WORKSPACE}"
