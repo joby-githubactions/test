@@ -41,5 +41,10 @@ jobs:
           echo "Checked out repository path:"
           echo "${GITHUB_WORKSPACE}"
           source ${SCRIPTS_PATH}/shared/git_helpers.sh
-          email=$(get_git_committer_email)  # Call the function to get committer email
-          echo "Committer email: $email"
+          echo "get_git_repository_name: $(get_git_repository_name)"
+          echo "get_git_branch_name: $(get_git_branch_name)"
+          echo "get_git_committer_name: $(get_git_committer_name)"
+          echo "get_git_committer_email: $(get_git_committer_email)"
+          echo "get_git_commit_url: $(get_git_commit_url)"
+          echo "get_git_commit_id: $(get_git_commit_id)"
+          echo "get_git_commit_message: $(get_git_commit_message)"
