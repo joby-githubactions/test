@@ -35,5 +35,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      # Add steps specific to development branch workflow
+      - name: Run Trivy Scan
+        run: |
+          pwd
+          echo "Checked out repository path:"
+          echo "${GITHUB_WORKSPACE}"
