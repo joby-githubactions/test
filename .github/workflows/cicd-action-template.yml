@@ -38,6 +38,7 @@ jobs:
       - name: Run Trivy Scan
         run: |
           pwd
+          echo "run_number: ${ github.run_number }"
           echo "GITHUB_JOB : ${GITHUB_JOB}"
           echo "GITHUB_RUN_ID: ${GITHUB_RUN_ID}"
           echo "Checked out repository path:"
