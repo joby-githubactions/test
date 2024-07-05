@@ -38,7 +38,8 @@ jobs:
       - name: Run Trivy Scan
         run: |
           pwd
-          echo "${GITHUB_RUN_ID}"
+          echo "CI_JOB_ID : ${CI_JOB_ID}"
+          echo "GITHUB_RUN_ID: ${GITHUB_RUN_ID}"
           echo "Checked out repository path:"
           echo "${GITHUB_WORKSPACE}"
           source ${SCRIPTS_PATH}/shared/git_helpers.sh
