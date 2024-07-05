@@ -38,6 +38,7 @@ jobs:
       - name: Run Trivy Scan
         run: |
           pwd
+          echo "${GITHUB_RUN_ID}"
           echo "Checked out repository path:"
           echo "${GITHUB_WORKSPACE}"
           source ${SCRIPTS_PATH}/shared/git_helpers.sh
@@ -48,3 +49,4 @@ jobs:
           echo "get_git_commit_url: $(get_git_commit_url)"
           echo "get_git_commit_id: $(get_git_commit_id)"
           echo "get_git_commit_message: $(get_git_commit_message)"
+          
