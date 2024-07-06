@@ -57,3 +57,8 @@ jobs:
         env:
           NAMESPACE: nextgen
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Archive code coverage results
+        uses: actions/upload-artifact@v4
+        with:
+          name: trivy
+          path: ${ARTIFACTS_PATH}/trivy/report-high-crit.html
