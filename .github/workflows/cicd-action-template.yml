@@ -61,5 +61,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Artifacts
-          path: ${{ env.ARTIFACTS_PATH }}
+          path: /home/runner/actions-runner/scripts/outputs
           
