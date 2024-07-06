@@ -8,7 +8,7 @@ on:
       - '*'
 
 jobs:
-  release_agent:
+  release_deployment:
     if: startsWith(github.ref, 'refs/heads/release/') && contains(github.event_name, 'push')
     runs-on: release
 
@@ -18,7 +18,7 @@ jobs:
 
       # Add steps specific to release branch workflow
 
-  production_agent:
+  production_deployment:
     if: github.ref == 'refs/heads/main' && contains(github.event_name, 'push')
     runs-on: production
 
@@ -28,7 +28,7 @@ jobs:
  
       # Add steps specific to production branch workflow
 
-  development_agent:
+  development_deployment:
     if: github.ref != 'refs/heads/release/*' && github.ref != 'refs/heads/main' && contains(github.event_name, 'push')
     runs-on: development
 
