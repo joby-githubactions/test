@@ -60,5 +60,6 @@ jobs:
       - name: Archive code coverage results
         uses: actions/upload-artifact@v4
         with:
-          name: trivy
-          path: /home/runner/actions-runner/scripts/outputs/trivy/report-high-crit.html
+          name: Artifacts
+          path: ${{ env.ARTIFACTS_PATH }}
+          
