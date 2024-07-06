@@ -61,4 +61,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: trivy
-          path: ${ARTIFACTS_PATH}/trivy/report-high-crit.html
+          path: /home/runner/actions-runner/scripts/outputs/trivy/report-high-crit.html
