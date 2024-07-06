@@ -61,5 +61,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Artifacts
-          path: /home/runner/actions-runner/scripts/outputs
+          path: /artifacts
           
